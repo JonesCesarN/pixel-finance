@@ -9,24 +9,6 @@
 </div>
 <br>
 
-# Regras
-
-### Caixa
-- [ ] Adicionar/Remover dinheiro em caixa.
-
-### Contas
-- [ ] Adicionar contas
-  - [ ] Conta unica.
-  - [ ] Conta recorrente.
-  - [ ] Mudar status: ABERTO, PAGA, QUITADA
-  
-# Funcionalidades
-- [ ] Mostrar as 2 próximas contas em aberto.
-  - [ ] Calcular dinheiro que falta para quitar conta.
-  - [ ] Mudar de cor conforme status
-- [ ] Registrar em lançamentos movimentação de caixa.
-- [ ] DarkMode
-
 # Construído com
 - [x] [TypeScript](https://www.typescriptlang.org/)
 - [x] [Next.js](https://nextjs.org/)
