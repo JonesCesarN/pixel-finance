@@ -40,7 +40,7 @@ const Layout = ({ children, title = 'piXel Finance' }: Props) => {
             }
           </Button>
           <div style={{ width: 100 }}>
-            <Image src={Logo} layout='responsive' />
+            <Image src={Logo} layout='responsive' priority={true} />
           </div>
           <Button onClick={toggleTheme}>
             {theme === 'light'
@@ -64,6 +64,7 @@ const Main = styled('div', {
   display: "flex",
   flexDirection: "column",
   gap: '$2',
+
 })
 
 const Container = styled('div', {
@@ -74,7 +75,7 @@ const Container = styled('div', {
   flexDirection: 'column',
   margin: '0 auto',
   gap: '$2',
-  backgroundColor: '$gray1'
+  backgroundColor: '$gray2'
 })
 
 const Header = styled('header', {
@@ -83,6 +84,7 @@ const Header = styled('header', {
   justifyContent: 'space-between',
   width: '100%',
   padding: '$2',
+  backgroundColor: '$gray1'
 })
 
 const Button = styled("button", {
