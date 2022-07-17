@@ -1,33 +1,24 @@
 import Placeholder from "@/styles/Placeholder";
 import { styled } from "stitches.config";
 
-export const NextTwoOpenAccountsFallback = () => {
-
-
+export const CashierFallback = () => {
   return (
     <Container>
-      <Placeholder rounded size='6' />
+      <Placeholder rounded size={6} />
+      <Placeholder size={10} myHeigth={5} />
       <Box>
         <div className="header">
-          <Placeholder rounded size='3' />
-          <Placeholder rounded size='2' />
+          <Placeholder rounded size={10} myHeigth={5} />
+          <Placeholder size={10} myHeigth={5} />
         </div>
-        <Placeholder rounded size='3' />
-        <Placeholder rounded size='5' />
+        <Placeholder rounded size={10} myHeigth={5} />
+        <Placeholder rounded size={10} myHeigth={5} />
+        <Placeholder rounded size={10} myHeigth={5} />
       </Box>
-      <Box>
-        <div className="header">
-          <Placeholder rounded size='3' />
-          <Placeholder rounded size='2' />
-        </div>
-        <Placeholder rounded size='3' />
-        <Placeholder rounded size='5' />
-      </Box>
+
     </Container>
   )
 }
-
-
 
 const Container = styled('div', {
   display: 'flex',
@@ -50,12 +41,13 @@ const Box = styled('div', {
   padding: '$2',
   borderRadius: '$2',
   gap: '$2',
-  backgroundColor: '$gray7',
+  border: '1px solid $gray8',
 
 
   [`& .header`]: {
     display: 'flex',
     width: '100%',
     justifyContent: 'space-between',
+    gap: 5
   }
 })

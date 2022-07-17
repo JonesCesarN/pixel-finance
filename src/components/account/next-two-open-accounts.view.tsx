@@ -7,8 +7,6 @@ interface Props {
 }
 
 export const NextTwoOpenAccountsView = ({ accounts }: Props) => {
-
-
   return (
     <Container>
       <TextBase as='h3' size={5} bold className="title">Proximas contas</TextBase>

@@ -10,7 +10,6 @@ const Placeholder = styled("span", {
   height: 10,
   position: 'relative',
   backgroundColor: '$gray9',
-  borderRadius: "$2",
   overflow: 'hidden',
 
   ['&:after']: {
@@ -38,11 +37,21 @@ const Placeholder = styled("span", {
       10: { width: '100%' },
     },
 
+    myHeigth: {
+      1: { height: 5 },
+      2: { height: 10 },
+      3: { height: 15 },
+      4: { height: 20 },
+      5: { height: 25 },
+    },
+
+    rounded: { true: { borderRadius: "$2" } }
   },
 
   defaultVariants: {
     size: 1,
-  }
+  },
+
 
 });
 
