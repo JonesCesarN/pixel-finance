@@ -1,0 +1,59 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Cashier {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  total     Decimal  @db.Money
+  records   Record[]
+}
+
+model Record {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  type      Type
+  value     Decimal  @db.Money
+  reason    String
+  cashierId Int
+  cashier   Cashier  @relation(fields: [cashierId], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id          Int           @id @default(autoincrement())
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  value       Decimal       @db.Money
+  status      Status
+  description String
+  parcel      Boolean
+  dueDate     String?
+  installment Installment[]
+}
+
+model Installment {
+  id        Int     @id @default(autoincrement())
+  status    Status
+  accountId Int
+  date      String
+  account   Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+}
+
+enum Type {
+  ENTRANCE
+  OUTPUT
+}
+
+enum Status {
+  OPEN
+  PAID
+  FINISHED
+}
