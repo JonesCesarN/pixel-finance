@@ -14,6 +14,6 @@
 - [x] [TypeScript](https://www.typescriptlang.org/)
 - [x] [Next.js](https://nextjs.org/)
 - [x] [Stitches](https://stitches.dev/)
-- [ ] [Postgresql](https://www.postgresql.org/)
-- [ ] [Prisma](https://prisma.io/)
+- [x] [Postgresql](https://www.postgresql.org/)
+- [x] [Prisma](https://prisma.io/)
 - [ ] [Vercel](https://vercel.com)
