@@ -12,10 +12,8 @@ const TextBase = styled("p", {
 
     uppercase: { true: { textTransform: "uppercase" } },
     bold: { true: { fontWeight: "bold" } },
+    boldDark: { true: { fontWeight: "bold", color: '#121212' } },
     pointer: { true: { cursor: "pointer" } },
-    alert: { true: { color: '$yellow12' } },
-    sucess: { true: { color: '$green12' } },
-    warning: { true: { color: '$red12' } },
   },
 
   defaultVariants: {

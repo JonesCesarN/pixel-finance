@@ -1,32 +1,32 @@
+import { FormatDistance, formatValue, IResultBalance } from "@/helpers"
 import TextBase from "@/styles/TextBase"
-import { Format } from "@/utils/formatDate"
-import { formatValue } from "@/utils/formatValue"
-import { Account } from "@prisma/client"
 import { styled } from "stitches.config"
 
 interface Props {
-  nextAccounts: Account[]
+  accounts: IResultBalance[]
 }
 
-export const NextTwoOpenAccountsView = ({ nextAccounts }: Props) => {
+export const NextTwoOpenAccountsView = ({ accounts }: Props) => {
+
 
   return (
     <Container>
       <TextBase as='h3' size={5} bold className="title">Proximas contas</TextBase>
-      {nextAccounts.map(account => (
-        <Box key={account.id} className={account.status}>
+      {accounts.map(account => (
+        <Box key={account.id} className={account.balanceStatus}>
           <div className="header">
-            <TextBase size={3}>{Format(account.dueDate, 'dd/MM/yyyy')}</TextBase>
-            <TextBase size={3} bold alert>{formatValue(account.value)}</TextBase>
+            <TextBase size={3}>{FormatDistance(account.dueDate)}</TextBase>
+            <TextBase size={3} boldDark className='value'>{formatValue(account.value)}</TextBase>
           </div>
           <div className="main">
-            <TextBase size={4} uppercase bold alert>{account.description}</TextBase>
+            <TextBase size={4} uppercase boldDark >{account.description}</TextBase>
           </div>
           <div>
-            <TextBase size={4} bold>{formatValue(account.value)}</TextBase>
+            <TextBase size={4} uppercase bold >{account.balance}</TextBase>
           </div>
         </Box>
       ))}
+
     </Container>
   )
 }
@@ -42,10 +42,16 @@ const Container = styled('div', {
   backgroundColor: '$gray5',
   borderRadius: '$2',
 
-  ['& .OPEN']: {
-    backgroundColor: '$yellow4',
+  ['& .alert']: {
+    backgroundColor: '$yellow3',
     border: '2px solid $yellow7',
     color: '$yellow11',
+  },
+
+  ['& .warning']: {
+    backgroundColor: '$red3',
+    border: '2px solid $red7',
+    color: '$red11',
   },
 
   ['& .title']: {

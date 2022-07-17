@@ -7,7 +7,7 @@ function Format(date: any, formatStr: string) {
   });
 }
 
-function FormatDistance(date: Date | number) {
+function FormatDistance(date: any) {
   return formatDistance(new Date(date), new Date(), { locale: ptBR, addSuffix: true });
 }
 

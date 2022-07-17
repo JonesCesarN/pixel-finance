@@ -9,12 +9,13 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
     where: {
       status: 'OPEN'
     },
-    take: 2
+    take: 2,
+    include: { installment: true }
   })
 
   if (result.length < 1) {
-    res.json({ ok: false, message: "Nenhuma conta encontrada!" });
+    res.status(200).json({ ok: false, message: "Nenhuma conta encontrada!" });
   } else {
-    res.json(result);
+    res.status(200).json(result);
   }
 }
